@@ -1,0 +1,102 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+abstract class Product {
+    - name: String
+    - price: double
+    + Product()
+    + Product(name: String, price: double)
+    + getName(): String
+    + setName(name: String): void
+    + getPrice(): double
+    + setPrice(price: double): void
+    + equals(obj: Object): boolean
+    + hashCode(): int
+    + toString(): String
+}
+
+class Fruit {
+    - origin: String
+    - weight: double
+    + Fruit()
+    + Fruit(name: String, price: double, origin: String, weight: double)
+    + getOrigin(): String
+    + setOrigin(origin: String): void
+    + getWeight(): double
+    + setWeight(weight: double): void
+    + equals(obj: Object): boolean
+    + hashCode(): int
+    + toString(): String
+}
+
+class DairyProduct {
+    - fatContent: int
+    - expirationDate: String
+    + DairyProduct()
+    + DairyProduct(name: String, price: double, fatContent: int, expirationDate: String)
+    + getFatContent(): int
+    + setFatContent(fatContent: int): void
+    + getExpirationDate(): String
+    + setExpirationDate(expirationDate: String): void
+    + equals(obj: Object): boolean
+    + hashCode(): int
+    + toString(): String
+}
+
+class Meat {
+    - type: String
+    - weight: double
+    + Meat()
+    + Meat(name: String, price: double, type: String, weight: double)
+    + getType(): String
+    + setType(type: String): void
+    + getWeight(): double
+    + setWeight(weight: double): void
+    + equals(obj: Object): boolean
+    + hashCode(): int
+    + toString(): String
+}
+
+class Main {
+    - products: List<Product>
+    - scanner: Scanner
+    + main(args: String[]): void
+    - printMenu(): void
+    - addProduct(): void
+    - deleteProduct(): void
+    - displayAllProducts(): void
+    - compareProducts(): void
+    - readIntInput(prompt: String, min: int, max: int): int
+    - readDoubleInput(prompt: String, min: double, max: double): double
+    - readStringInput(prompt: String): String
+}
+
+Product <|-- Fruit
+Product <|-- DairyProduct
+Product <|-- Meat
+Main --> Product : uses
+
+note top of Product
+  Базовый абстрактный класс
+  для всех продуктов
+end note
+
+note right of Fruit
+  Фрукты
+  Поля: название, цена,
+  страна происхождения, вес
+end note
+
+note right of DairyProduct
+  Молочная продукция
+  Поля: название, цена,
+  жирность, срок годности
+end note
+
+note right of Meat
+  Мясо
+  Поля: название, цена,
+  тип мяса, вес
+end note
+
+@enduml

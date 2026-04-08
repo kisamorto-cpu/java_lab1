@@ -1,0 +1,47 @@
+```
+# Compiled Java classes
+*.class
+
+# Build output directory
+out/
+
+# Compressed archives
+*.tar.gz
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.local
+*.env.*
+
+# Dependencies
+node_modules/
+venv/
+.venv/
+target/
+.gradle/
+
+# Python cache (if any Python files exist)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Coverage reports
+coverage/
+htmlcov/
+*.coverage
+
+# System files
+.DS_Store
+Thumbs.db
+```
